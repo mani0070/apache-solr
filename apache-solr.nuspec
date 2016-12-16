@@ -11,7 +11,7 @@
     <iconUrl>https://www.apache.org/img/asf_logo.png</iconUrl>
     <copyright>DInventive Ltd</copyright>
     <licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>-->
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>http://apache.mirror.anlx.net/lucene/solr/6.3.0</projectSourceUrl>
     <docsUrl>https://lucene.apache.org/solr/resources.html</docsUrl>
     <tags>apache-solr admin</tags>
