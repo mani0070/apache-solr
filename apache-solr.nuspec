@@ -4,7 +4,7 @@
     <id>apache-solr</id>
     <version>6.3.0</version>
     <packageSourceUrl>https://github.com/mani0070/apache-solr</packageSourceUrl>
-    <owners>Manimaran Chandrasekaran</owners>
+    <owners>Apache Software Foundation</owners>
     <title>apache-solr (Install)</title>
     <authors>Manimaran Chandrasekaran</authors>
     <projectUrl>https://lucene.apache.org/solr/</projectUrl>
