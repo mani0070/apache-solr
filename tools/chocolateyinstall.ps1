@@ -1,24 +1,29 @@
-﻿$ErrorActionPreference = 'Stop';
+$ErrorActionPreference = 'Stop';
 
-$packageName= 'apache-solr'
-$toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url        = 'http://archive.apache.org/dist/lucene/solr/6.3.0/solr-6.3.0.zip'
-$url64      = ''
-
-$packageArgs = @{
-  packageName   = $packageName
-  unzipLocation = $toolsDir
-  fileType      = 'EXE_MSI_OR_MSU'
-  url           = $url
-  url64bit      = $url64
-
-  softwareName  = 'apache-solr*'
-
-  checksum      = ''
-  checksumType  = 'sha256'
-  checksum64    = ''
-  checksumType64= 'sha256'
-
-
+$options = @{
+  unzipLocation = 'C:\tools\'
 }
-Install-ChocolateyZipPackage $packageName $url $toolsDir $url64
+$packageParameters = @{
+  packageName   = 'apache-solr'
+  url           = 'http://archive.apache.org/dist/lucene/solr/6.3.0/solr-6.3.0.zip'
+  softwareName  = 'apache-solr*'
+  checksum      = 'fdea1d2c253dda792a6065451d50ad6c7c50da10'
+  checksumType  = 'sha1'
+}
+
+function Set-ChocolateyPackageOptions {
+    param(
+        [Parameter(Mandatory=$True,Position=1)]
+        [hashtable] $options
+    )
+    $packageParameters = $env:chocolateyPackageParameters;
+ 
+    if ($packageParameters) {
+        $parameters = ConvertFrom-StringData -StringData $env:chocolateyPackageParameters.Replace(" ", "`n")
+        $parameters.GetEnumerator() | ForEach-Object {
+           $options[($_.Key)] = ($_.Value)
+        }
+    }
+}
+
+Install-ChocolateyZipPackage -PackageName $packageParameters['packageName']  -Url $packageParameters['url'] -UnzipLocation $options['unzipLocation']
