@@ -4,9 +4,9 @@ $options = @{
   unzipLocation = 'C:\tools\'
 }
 $packageParameters = @{
-  packageName   = 'apache-solr'
+  packageName   = 'solr'
   url           = 'http://archive.apache.org/dist/lucene/solr/6.3.0/solr-6.3.0.zip'
-  softwareName  = 'apache-solr*'
+  softwareName  = 'solr*'
   checksum      = 'fdea1d2c253dda792a6065451d50ad6c7c50da10'
   checksumType  = 'sha1'
 }
