@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-$packageName = 'apache-solr'
-$softwareName = 'apache-solr*'
+$packageName = 'solr'
+$softwareName = 'solr*'
 
 Uninstall-ChocolateyZipPackage $packageName
